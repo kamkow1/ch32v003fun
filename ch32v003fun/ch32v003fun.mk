@@ -1,14 +1,14 @@
 ifeq ($(OS),Windows_NT)
-    PREFIX?=riscv64-unknown-elf
+    PREFIX?=riscv64-unknown-linux-gnu
 else
-    ifeq (, $(shell which riscv64-unknown-elf-gcc))
+    ifeq (, $(shell which riscv64-unknown-linux-gnu-gcc))
         PREFIX?=riscv64-elf
     else
-        PREFIX?=riscv64-unknown-elf
+        PREFIX?=riscv64-unknown-linux-gnu
     endif
 endif
 
-CH32V003FUN?=../../ch32v003fun
+CH32V003FUN?=././ch32v003fun/ch32v003fun
 MINICHLINK?=$(CH32V003FUN)/../minichlink
 
 CFLAGS+= \
